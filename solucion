@@ -1,40 +1,47 @@
 
-//La suma de los números primos que hay entre los 50 primeros números
+public class Primos {
 
-boolean[] esPrimo;
-int suma = 0;
+// La suma de los números primos que hay entre los 50 primeros números
 
-	for (i=2;i<50;i++) {
-		esPrimo = false;
-		for (j=2;j<i;j++) {
-			esPrimo = i % j == 0;
+	public static int sumarPrimos() {
+		boolean esPrimo;
+		int suma = 0;
+
+		for (int i = 2; i < 50; i++) {
+			esPrimo = false;
+			for (int j = 2; j < i; j++) {
+				esPrimo = i % j == 0;
+			}
+			if (esPrimo) {
+				suma += i;
+			}
 		}
-		if (esPrimo) {
-			suma += i;
-		}
+
+		return suma;
 	}
-	
-return suma;
 
+	public static int sumarPrimerosPrimos() {
+		// La suma de los 50 primeros números primos
 
-//La suma de los 50 primeros números primos
+		boolean esPrimo;
+		int suma = 0;
+		int contador = 0;
+		int valor = 2;
 
-boolean[] esPrimo;
-int suma = 0;
-int contador=0;
-int valor = 2;
-
-while (contador <= 50) {
-	for (i=2;i<valor;i++) {
-		esPrimo = false;
-		for (j=2;j<i;j++) {
-			esPrimo = i % j == 0;
+		while (contador <= 50) {
+			for (int i = 2; i < valor; i++) {
+				esPrimo = false;
+				for (int j = 2; j < i; j++) {
+					esPrimo = i % j == 0;
+				}
+				if (esPrimo) {
+					suma += i;
+					contador += 1;
+				}
+				valor += 1;
+			}
 		}
-		if (esPrimo) {
-			suma += i;
-			contador+=1;
-		}
-		valor +=1;
+		return suma;
 	}
+
 }
-return suma;
